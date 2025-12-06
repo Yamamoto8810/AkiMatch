@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>スケジュール入力</title>
+    <style>
+        table, th, td { border: 1px solid black; border-collapse: collapse; }
+        th, td { padding: 5px; text-align: center; }
+        .selected { background-color: #90ee90; } /* 緑色で選択表示 */
+        td { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>スケジュール入力</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>時間 / 日</th>
+                <th th:each="day : ${days}" th:text="${day}"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="time : ${times}">
+                <td th:text="${time}"></td>
+                <td th:each="day : ${days}" onclick="toggleSelect(this)"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function toggleSelect(cell) {
+            cell.classList.toggle("selected");
+        }
+    </script>
+</body>
+</html>

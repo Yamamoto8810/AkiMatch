@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>スケジュール作成（管理者）</title>
+</head>
+<body>
+
+<h1>スケジュール作成（管理者）</h1>
+
+<form method="post" action="/admin/schedule/create">
+
+    <h3>対象期間</h3>
+    開始日：
+    <input type="date" name="startDate" required><br><br>
+
+    終了日：
+    <input type="date" name="endDate" required><br><br>
+
+    <h3>時間帯</h3>
+    開始時刻：
+    <input type="time" name="startTime" required><br><br>
+
+    終了時刻：
+    <input type="time" name="endTime" required><br><br>
+
+    <button type="submit">スケジュール作成</button>
+
+</form>
+
+</body>
+</html>

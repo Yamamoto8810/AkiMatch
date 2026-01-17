@@ -1,0 +1,5 @@
+<h2>スケジュール作成完了</h2>
+
+<p>以下のURLを共有してください</p>
+
+<input type="text" th:value="${url}" readonly>

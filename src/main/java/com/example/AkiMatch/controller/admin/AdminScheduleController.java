@@ -1,22 +1,24 @@
-package com.example.AkiMatch.controller;
+package com.example.AkiMatch.controller.admin;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class AdminController {
+public class AdminScheduleController {
 
-    // 管理者用：スケジュール作成画面
+    // 画面表示
     @GetMapping("/admin/schedule/create")
     public String showCreateForm() {
         return "admin/schedule_create";
     }
 
-    // フォーム送信（今は画面遷移のみ）
+    // フォーム送信（1つだけ！）
     @PostMapping("/admin/schedule/create")
-    public String createSchedule() {
-        // 次回：ここでDB保存
-        return "redirect:/schedule";
+    public String createSchedule(Model model) {
+        // 次回：DB保存・token発行
+        return "redirect:/admin/schedule/create";
     }
 }
+

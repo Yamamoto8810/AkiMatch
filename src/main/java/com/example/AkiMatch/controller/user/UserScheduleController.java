@@ -1,11 +1,11 @@
-package com.example.AkiMatch.controller;
+package com.example.AkiMatch.controller.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ScheduleController {
+public class UserScheduleController {
 
     @GetMapping("/schedule")
     public String schedule(Model model) {
